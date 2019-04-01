@@ -11,7 +11,9 @@ defmodule BusiApiWeb.VentaView do
   end
 
   def render("venta.json", %{venta: venta}) do
-    %{fecha: venta.fecha,
+    %{
+      id: venta.id,
+      fecha: venta.fecha,
       valor: venta.valor}
   end
 end

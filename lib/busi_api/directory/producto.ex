@@ -2,7 +2,7 @@ defmodule BusiApi.Directory.Producto do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @primary_key {:id, :integer, []}
+  @primary_key {:id, :id, autogenerate: true}
 
   schema "productos" do
     field :descripcion, :string
@@ -15,7 +15,7 @@ defmodule BusiApi.Directory.Producto do
   @doc false
   def changeset(producto, attrs) do
     producto
-    |> cast(attrs, [:id, :nombre, :descripcion, :precio_unidad])
-    |> validate_required([:id, :nombre, :descripcion, :precio_unidad])
+    |> cast(attrs, [:nombre, :descripcion, :precio_unidad])
+    |> validate_required([:nombre, :descripcion, :precio_unidad])
   end
 end

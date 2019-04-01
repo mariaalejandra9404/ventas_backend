@@ -11,7 +11,9 @@ defmodule BusiApiWeb.ProductoView do
   end
 
   def render("producto.json", %{producto: producto}) do
-    %{nombre: producto.nombre,
+    %{
+      id: producto.id,
+      nombre: producto.nombre,
       descripcion: producto.descripcion,
       precio_unidad: producto.precio_unidad}
   end

@@ -2,7 +2,7 @@ defmodule BusiApi.Directory.Venta do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @primary_key {:id, :integer, []}
+  @primary_key {:id, :id, autogenerate: true}
 
   schema "ventas" do
     field :fecha, :date
@@ -15,7 +15,7 @@ defmodule BusiApi.Directory.Venta do
   @doc false
   def changeset(venta, attrs) do
     venta
-    |> cast(attrs, [:id, :fecha, :valor])
-    |> validate_required([:id, :fecha, :valor])
+    |> cast(attrs, [:fecha, :valor, :tienda_id])
+    |> validate_required([:fecha, :valor, :tienda_id])
   end
 end
